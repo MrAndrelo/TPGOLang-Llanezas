@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 
 	"TPseminarioGo.com/model"
@@ -20,9 +21,19 @@ func TestMode(t *testing.T) {
 		{"TX06ABCDE", false, "", "", 0},
 		{"NN0512345", true, "NN", "12345", 5},
 	}
-
 	for _, testData := range cases {
-		_, err := model.GenerateStruct(testData.Input)
-		assert.Equal(t, err == nil, testData.Result)
+		r, err := model.GenerateStruct(testData.Input)
+		if assert.Equal(t, err == nil, testData.Result) {
+			if assert.Equal(t, r.Type, testData.Type) {
+				fmt.Print("Pasó por el test")
+			}
+			if assert.Equal(t, r.Length, testData.Length) {
+				fmt.Print("Pasó por el test")
+			}
+			if assert.Equal(t, r.Value, testData.Value) {
+				fmt.Print("Pasó por el test")
+			}
+		}
 	}
+
 }
