@@ -1,4 +1,6 @@
 # TPGOLang-Llanezas
+
+Alumno : José Andrés Llanezas
 Trabajo Práctico del Seminario de Go Lang  2021
 
 
@@ -13,4 +15,9 @@ los siguientes N caracteres son el valor, donde N es el valor del bullet anterio
 
 
 ******************************
+
+Para resolver la consigna comencé con el modelo que genera una estructura a partir de un string "input" harcodeado desde el Main. Lo toma y subdivide en Type, Value y Length y chequea que cada parte sea válida y se corresponda con los requerimientos.
+
+El main solo pasa el input y devuelve el string parseado o el error sea cual sea el caso.
+
 
