@@ -23,6 +23,8 @@ func TestMode(t *testing.T) {
 	}
 	for _, testData := range cases {
 		r, err := model.GenerateStruct(testData.Input)
+		assert.Equal(t, err == nil, testData.Result)
+
 		if assert.Equal(t, err == nil, testData.Result) {
 			if assert.Equal(t, r.Type, testData.Type) {
 				fmt.Print("Pasó por el test")
