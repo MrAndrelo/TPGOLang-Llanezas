@@ -32,6 +32,10 @@ func GenerateStruct(str string) (Result, error) {
 	r.Value = str[4:]
 	r.Length = z
 
+	if (resultLength - 4) != r.Length {
+		return r, errors.New("el largo no coincide")
+	}
+
 	if r.Type != "TX" && r.Type != "NN" {
 		return r, errors.New("no es de un tipo válido")
 	}
